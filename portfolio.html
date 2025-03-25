@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('Стол.jpg'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat; 
+            background-attachment: fixed; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            min-height: 100vh; 
+            color: #ffffff; 
+            flex-direction: column;
+        }
+
+        header {
+            width: 100%;
+            background-color: 0;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #2d2bb2;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+            width: 50%; 
+            background-color: rgba(0, 0, 0, 0.5); 
+            border-radius: 8px;
+            box-shadow: 0 4px 8px #ffffff;
+            padding: 20px;
+            overflow: auto;
+            margin-top: 70px; 
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .skills, .projects, .help, .feedback {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .skills ul, .projects ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills li, .projects li {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            color: #0c5395;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .tech-stack {
+            display: block; 
+            margin-left: auto; 
+            margin-right: auto; 
+            text-align: center; 
+        }
+
+        .tech-stack img {
+            margin: 5px;
+        }
+
+        .feedback {
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .feedback p {
+            font-size: 1.2em;
+        }
+
+        .stats img, .trophy img {
+            width: 75%;
+            border-radius: 8px;
+            margin: 20px auto; 
+            display: block; 
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index_glav.html">Главная</a></li>
+                <li><a href="portfolio.html">Портфолио</a></li>
+                <li><a href="My_index.html">Обо мне</a></li>
+                <li><a href="Contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>💫 About Me</h1>
+
+        <div class="skills">
+            <h2>Навыки</h2>
+            <ul>
+                <li><span class="highlight">Python</span> (изучение основ, ООП)</li>
+                <li>Работа с API (<span class="highlight">Telegram API</span>, <span class="highlight">requests</span>)</li>
+                <li><span class="highlight">Git</span> (основные команды, управление репозиториями GitHub)</li>
+            </ul>
+        </div>
+
+        <div class="projects">
+            <h2>Проекты</h2>
+            <ul>
+                <li><span class="highlight">Telegram Dating Bot</span> – реализован алгоритм подбора, управление через команды.</li>
+                <li><span class="highlight">Telegram Entertainment Bot</span> – может рассказывать шутки, отправлять мемы и вести маленькие беседы.</li>
+            </ul>
+        </div>
+
+        <div class="help">
+            <h2>Как я могу помочь?</h2>
+            <p>Разработка и улучшение <span class="highlight">Telegram</span> ботов для различных задач.<br>
+            Создание программ на <span class="highlight">Python</span> по заданным требованиям.</p>
+        </div>
+
+        <div class="feedback">
+        </div>
+
+        <div class="tech-stack">
+            <h2>💻 Tech Stack</h2>
+            <p>
+                <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+                <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+                <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python">
+            </p>
+        </div>
+
+        <div class="stats">
+            <h2>📊 GitHub Stats</h2>
+            <img src="https://github-readme-stats.vercel.app/api?username=AndreyLunatov&theme=dark&hide_border=false&include_all_commits=false&count_private=false" alt="GitHub Stats">
+            <img src="https://github-readme-streak-stats.herokuapp.com/?user=AndreyLunatov&theme=dark&hide_border=false" alt="GitHub Streak Stats">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AndreyLunatov&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" alt="Top Languages">
+        </div>
+
+        <div class="trophy">
+            <h2>🏆 GitHub Trophies</h2>
+            <img src="https://github-profile-trophy.vercel.app/?username=AndreyLunatov&theme=radical&no-frame=false&no-bg=true&margin-w=4" alt="GitHub Trophies">
+        </div>
+    </div>
+
+</body>
+</html>
