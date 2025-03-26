@@ -36,7 +36,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #2d1caf; 
+  color: #2d1caf;
 }
 
 .hero {
@@ -71,11 +71,11 @@ nav a:hover {
 }
 
 .bold-name {
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 .transparent-text {
-  opacity: 0.4; 
+  opacity: 0.4;
 }
 
 .hero span {
@@ -129,4 +129,67 @@ nav a::after {
 
 nav a:hover::after {
   width: 100%;
+}
+
+/* Медиазапросы для мобильных устройств */
+@media screen and (max-width: 768px) {
+  /* Навигация */
+  nav {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Герой-блок */
+  .hero h1 {
+    font-size: 36px; /* Уменьшаем размер текста */
+  }
+
+  .hero {
+    height: 60vh; /* Уменьшаем высоту блока hero */
+  }
+
+  /* Портфолио */
+  .portfolio-grid {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .portfolio-item img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Медиазапросы для телефонов */
+@media screen and (max-width: 480px) {
+  /* Заголовок */
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .portfolio h2 {
+    font-size: 24px;
+  }
+
+  .portfolio-item img {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* Портфолио */
+  .portfolio-grid {
+    gap: 10px;
+  }
+
+  /* Логотип */
+  nav a {
+    font-size: 16px;
+  }
 }
