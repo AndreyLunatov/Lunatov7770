@@ -165,12 +165,19 @@ nav a:hover::after {
     width: 200px;
     height: 200px;
   }
+
+  /* Логотип навигации */
+  nav a {
+    font-size: 16px;
+  }
 }
 
 /* Медиазапросы для телефонов */
 @media screen and (max-width: 480px) {
+  /* Заголовок */
   .hero h1 {
     font-size: 28px;
+    margin-bottom: 10px; /* Уменьшаем отступ */
   }
 
   .portfolio h2 {
