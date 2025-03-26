@@ -9,17 +9,17 @@
     <style>
         /* Основные стили для навигации и контента */
         nav ul {
-            list-style: none;
+            list-style: none; /* Убираем стандартные маркеры списка */
             padding: 0;
             margin: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+            display: flex; /* Используем flexbox для выравнивания в одну линию */
+            justify-content: center; /* Центрируем элементы по горизонтали */
+            gap: 20px; /* Отступы между элементами */
         }
 
-        nav ul li {
-            position: relative;
-        }
+       nav ul li {
+    display: inline-block; /* Делаем каждый элемент списка в виде блока */
+}
 
         nav ul li a {
             text-decoration: none;
@@ -44,31 +44,36 @@
             width: 100%;
         }
         .main-photo {
-            background-image: url('Луи-витон.jpg');
-            background-size: cover;
-            background-position: center center; /* Центрируем фон */
+            background: 
+                url('Луи-витон.jpg') no-repeat top center, /* Первый фон сверху */
+                url('другой_фон.jpg') no-repeat bottom center; /* Второй фон снизу */
+            background-size: cover, cover; /* Оба фона растягиваются на весь элемент */
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            z-index: -1; 
-            background-attachment: fixed; /* Сделать фон фиксированным при прокрутке */
+            height: 100vh; /* Высота на весь экран */
+            z-index: -1;
         }
+        
+        
+        
+        
+        
         
 
         .circle {
             position: absolute;
             width: 250px;
             height: 250px;
-            border-radius: 50%;
+            border-radius: 60%;
             border: 3px solid white;
             object-fit: cover;
             z-index: 1; 
         }
 
-        .top-left { top: 10%; left: 10%; }
-        .top-right { top: 10%; right: 10%; }
+        .top-left { top: 10%; left: 1%; }
+        .top-right { top: 10%; right: 1%; }
         .bottom-left { bottom: 10%; left: 10%; }
         .bottom-right { bottom: 10%; right: 10%; }
 
@@ -141,13 +146,17 @@
             padding: 0px 0;
         }
 
-       /* Для мобильных устройств, чтобы фон не сдвигался */
-@media screen and (max-width: 768px) {
-    .main-photo {
-        background-attachment: scroll; /* Отключаем фиксированное прикрепление фона */
-        background-position: top center; /* Центрируем фон по вертикали */
-    }
-}
+        @media (max-width: 768px) {
+            .main-photo {
+                background: 
+                    url('Луи-витон.jpg') no-repeat top center, 
+                    url('другой_фон.jpg') no-repeat bottom center;
+                background-size: cover, cover; /* Растягиваем фоны */
+                height: 100vh;
+            }
+        }
+        
+
         /* Для очень маленьких экранов (например, телефоны в портретной ориентации) */
         @media screen and (max-width: 480px) {
             .circle {
