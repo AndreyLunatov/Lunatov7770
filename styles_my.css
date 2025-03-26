@@ -180,4 +180,11 @@ a {
     .info-item {
         font-size: 14px;
     }
+
+    /* Добавлены дополнительные стили для текста */
+    .info-container {
+        margin-top: 80px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
