@@ -37,6 +37,7 @@
             justify-content: center;
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
 
         nav ul li {
@@ -72,28 +73,23 @@
         }
 
         .container {
-            width: 50%; 
+            width: 80%; 
             background-color: rgba(0, 0, 0, 0.5); 
             border-radius: 8px;
             box-shadow: 0 4px 8px #ffffff;
             padding: 20px;
             overflow: auto;
             margin-top: 70px; 
+            text-align: left;
         }
 
         h1, h2 {
             text-align: center;
         }
 
-        .skills, .projects, .help, .feedback {
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
+        /* Стили для списка навыков, проектов и других разделов */
         .skills ul, .projects ul {
-            list-style-type: none;
-            padding: 0;
+            padding-left: 20px;
         }
 
         .skills li, .projects li {
@@ -101,40 +97,90 @@
         }
 
         .highlight {
-            color: #0c5395;
             font-weight: bold;
-            text-align: left;
+            color: #2d2bb2;
         }
 
-        .tech-stack {
-            display: block; 
-            margin-left: auto; 
-            margin-right: auto; 
-            text-align: center; 
+        /* Медиазапросы для мобильных устройств */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .container {
+                width: 90%;
+                padding: 15px;
+                margin-top: 90px;
+            }
+
+            header {
+                padding: 5px 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            nav ul li a {
+                font-size: 1.2em;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            .skills ul, .projects ul {
+                padding-left: 15px;
+            }
+
+            .stats img, .trophy img {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .tech-stack img {
+                width: 50px;
+                margin-right: 10px;
+            }
         }
 
-        .tech-stack img {
-            margin: 5px;
-        }
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+                margin-top: 100px;
+                padding: 10px;
+            }
 
-        .feedback {
-            background-color: rgba(0, 0, 0, 0.1);
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-        }
+            nav ul li a {
+                font-size: 1em;
+            }
 
-        .feedback p {
-            font-size: 1.2em;
-        }
+            h1 {
+                font-size: 1.2em;
+            }
 
-        .stats img, .trophy img {
-            width: 75%;
-            border-radius: 8px;
-            margin: 20px auto; 
-            display: block; 
+            h2 {
+                font-size: 1.1em;
+            }
+
+            .stats img, .trophy img {
+                max-width: 250px;
+            }
+
+            .tech-stack img {
+                width: 40px;
+                margin-right: 8px;
+            }
         }
-        
     </style>
 </head>
 <body>
