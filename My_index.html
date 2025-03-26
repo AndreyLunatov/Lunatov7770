@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles_1.css">
     
     <style>
+        /* Основные стили для навигации и контента */
         nav ul {
             list-style: none;
             padding: 0;
@@ -42,21 +43,20 @@
         nav ul li a:hover::after {
             width: 100%;
         }
-
-        
         .main-photo {
             background-image: url('Луи-витон.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: center center; /* Центрируем фон */
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1; 
+            background-attachment: fixed; /* Сделать фон фиксированным при прокрутке */
         }
-
         
+
         .circle {
             position: absolute;
             width: 250px;
@@ -66,37 +66,17 @@
             object-fit: cover;
             z-index: 1; 
         }
+
         .top-left { top: 10%; left: 10%; }
         .top-right { top: 10%; right: 10%; }
         .bottom-left { bottom: 10%; left: 10%; }
         .bottom-right { bottom: 10%; right: 10%; }
 
-        
         .content {
             margin-top: 140px; 
-        }
-        
-
-        
-        .circle.top-left {
-            left: 10%;
-            top: 10%;
+            color: white;
         }
 
-        .circle.top-right {
-            right: 10%;
-            top: 10%;
-        }
-
-        .circle.bottom-left {
-            left: 10%;
-            bottom: 10%;
-        }
-
-        .circle.bottom-right {
-            right: 10%;
-            bottom: 10%;
-        }
         .ticker-wrapper {
             overflow: hidden;
             white-space: nowrap;
@@ -104,25 +84,25 @@
             background: yellow;
             padding: 10px 0;
         }
-        
-      .ticker {
-    display: inline-block;
-    font-size: 24px;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-    text-transform: uppercase;
-    white-space: nowrap; 
-    animation: tickerMove 10s linear infinite; 
-}
 
-@keyframes tickerMove {
-    0% {    
-        transform: translateX(-100%); 
-    }
-    100% {
-        transform: translateX(100%); 
-    }
-}
+        .ticker {
+            display: inline-block;
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            text-transform: uppercase;
+            white-space: nowrap; 
+            animation: tickerMove 10s linear infinite; 
+        }
+
+        @keyframes tickerMove {
+            0% {    
+                transform: translateX(-100%); 
+            }
+            100% {
+                transform: translateX(100%); 
+            }
+        }
 
         .scrolling-banner {
             width: 100%; 
@@ -134,14 +114,14 @@
             left: 0;
             z-index: 1000; 
         }
-        
+
         .scrolling-banner p {
             display: inline-block;
             white-space: nowrap; 
             padding-left: 100%; 
             animation: scroll-text 60s linear infinite; 
         }
-        
+
         @keyframes scroll-text {
             0% {
                 transform: translateX(100%); 
@@ -150,24 +130,52 @@
                 transform: translateX(-100%); 
             }
         }
-        
 
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.7); 
+            background-color: 0; 
             z-index: 1000;
             padding: 0px 0;
         }
-        
-        
+
+       /* Для мобильных устройств, чтобы фон не сдвигался */
+@media screen and (max-width: 768px) {
+    .main-photo {
+        background-attachment: scroll; /* Отключаем фиксированное прикрепление фона */
+        background-position: top center; /* Центрируем фон по вертикали */
+    }
+}
+        /* Для очень маленьких экранов (например, телефоны в портретной ориентации) */
+        @media screen and (max-width: 480px) {
+            .circle {
+                width: 120px;
+                height: 120px;
+            }
+
+            .content {
+                margin-top: 80px;
+                font-size: 14px;
+            }
+
+            .main-photo {
+                height: 50%;
+            }
+
+            .ticker {
+                font-size: 14px;
+            }
+
+            .scrolling-banner p {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    
     <header>
         <nav>
             <ul>
@@ -179,20 +187,16 @@
         </nav>
     </header>
 
-    
     <section>
-        
         <div class="main-photo"></div>
         <img class="circle top-left" src="Mogi-removebg-preview.png" alt="Моё фото 1">
         <img class="circle top-right" src="фоо.jpg" alt="Моё фото 2">
         <img class="circle bottom-left" src="Моё фото.jpg" alt="Моё фото 3">
         <img class="circle bottom-right" src="Снимок экрана 2025-03-25 023745.png" alt="Моё фото 4">
 
-        
         <div class="content">
-            <h2 bolt>Обо мне</h2>
-            
-           
+            <h2>Обо мне</h2>
+
             <div class="ticker-wrapper">
                 <div class="ticker">
                     <span>-Обо мне-Обо мне-Обо мне-Обо мне-Обо мне- </span>
@@ -201,16 +205,11 @@
             </div>
             <p style="text-align: center; font-size: 18px; line-height: 1.6; color: #ffffff; margin-top: 25px;">
                 Начинающий программист <br>
-Лет: 17 <br>
-Откуда: Украина <br>
-Люблю играть в волейбол, я начинающий программист-разработчик, интересуюсь кибербезопасностью, изучаю всё что бы достичь уровня full-stack developer ну что сказать это одна из небольших моих работ этот сайт,если что-то будет добавить я добавлю. 
-</p>
-            
-            
-            
-        
-        
-        
+                Лет: 17 <br>
+                Откуда: Украина <br>
+                Люблю играть в волейбол, я начинающий программист-разработчик, интересуюсь кибербезопасностью, изучаю всё что бы достичь уровня full-stack developer. Это одна из небольших моих работ — этот сайт, если что-то будет добавить, я добавлю. 
+            </p>
+        </div>
     </section>
 
 </body>
