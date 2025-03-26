@@ -169,7 +169,6 @@ nav a:hover::after {
 
 /* Медиазапросы для телефонов */
 @media screen and (max-width: 480px) {
-  /* Заголовок */
   .hero h1 {
     font-size: 28px;
   }
